@@ -1,0 +1,22 @@
+#!/usr/bin/env python2
+
+import ezpickle
+from sys import argv
+from tk import parse_molecules
+
+if __name__ == "__main__":
+
+    filename = argv[1]
+
+    mols = parse_molecules(filename)
+
+    print "Generating coulomb matrices ..."
+
+    for i, mol in enumerate(mols):
+        print i,"/", len(mols)
+        mol.generate_coulomb_matrix()
+
+    ezpickle.save(mols, "mols.cpickle")
+
+
+

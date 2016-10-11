@@ -1,0 +1,95 @@
+================================================================================
+==
+==   Density Functional based Tight Binding with a lot of extensions (DFTB+)    
+==
+==                              Release: 1.2 (p2)
+==
+==                            (ParserVersion = 4)
+==
+================================================================================
+
+
+********************************************************************************
+** Parsing and initializing
+********************************************************************************
+
+Interpreting input file 'dftb_in.hsd'
+--------------------------------------------------------------------------------
+WARNING!
+-> WriteHSDInput and WriteXMLInput both turned off. You won't eventually be 
+ able to obtain the same results with a later version of the code!
+Path: dftb_in/ParserOptions
+Line: 83-86 (File: dftb_in.hsd)
+
+Reading SK-files:
+  /home/andersx/parameters/3ob-3-1/C-C.skf
+  /home/andersx/parameters/3ob-3-1/C-N.skf
+  /home/andersx/parameters/3ob-3-1/C-S.skf
+  /home/andersx/parameters/3ob-3-1/C-H.skf
+  /home/andersx/parameters/3ob-3-1/N-C.skf
+  /home/andersx/parameters/3ob-3-1/N-N.skf
+  /home/andersx/parameters/3ob-3-1/N-S.skf
+  /home/andersx/parameters/3ob-3-1/N-H.skf
+  /home/andersx/parameters/3ob-3-1/S-C.skf
+  /home/andersx/parameters/3ob-3-1/S-N.skf
+  /home/andersx/parameters/3ob-3-1/S-S.skf
+  /home/andersx/parameters/3ob-3-1/S-H.skf
+  /home/andersx/parameters/3ob-3-1/H-C.skf
+  /home/andersx/parameters/3ob-3-1/H-N.skf
+  /home/andersx/parameters/3ob-3-1/H-S.skf
+  /home/andersx/parameters/3ob-3-1/H-H.skf
+Done.
+
+Starting initialization...
+--------------------------------------------------------------------------------
+Mode:                        Static calculation
+Self consistent charges:     Yes
+SCC-tolerance:                 0.100000E-05
+Max. scc iterations:                    100
+Ewald alpha parameter:         0.000000E+00
+Spin polarisation:           No
+Nr. of up electrons:            20.000000
+Nr. of down electrons:          20.000000
+Periodic boundaries:         No
+Diagonalizer:                Divide and Conquer
+Mixer:                       Anderson mixer
+Mixing parameter:                  0.200000
+Maximal SCC-cycles:                     100
+Nr. of chrg. vectors to mix:              8
+Electronic temperature:        0.100000E-07
+Initial charges:             Set automatically (system chrg:   0.000E+00)
+Included shells:              C:  s, p
+                              N:  s, p
+                              S:  s, p, d
+                              H:  s
+Full 3rd order correction    Yes
+Damped SCC                   Yes
+Damped specie(s):            H                                                 
+Extra options:
+--------------------------------------------------------------------------------
+ 
+
+********************************************************************************
+** Geometry step: 0
+********************************************************************************
+
+  iSCC Total electronic   Diff electronic      SCC error    
+    1   -0.17294894E+02    0.00000000E+00    0.89646815E+00
+    2   -0.17295482E+02   -0.58760117E-03    0.88280934E+00
+    3   -0.17310364E+02   -0.14881919E-01    0.14508567E+00
+    4   -0.17310954E+02   -0.59067705E-03    0.14679939E+00
+    5   -0.17311497E+02   -0.54311761E-03    0.14114392E+00
+    6   -0.17312164E+02   -0.66670227E-03    0.19323465E-01
+    7   -0.17312164E+02    0.57756033E-07    0.19475053E-01
+    8   -0.17312176E+02   -0.11654457E-04    0.51372989E-02
+    9   -0.17312176E+02    0.22133969E-06    0.65058446E-02
+   10   -0.17312177E+02   -0.10343095E-05    0.39243592E-02
+   11   -0.17312177E+02   -0.28833480E-06    0.12111309E-02
+   12   -0.17312177E+02   -0.11191777E-06    0.28646679E-03
+   13   -0.17312177E+02   -0.48332858E-08    0.10725325E-03
+   14   -0.17312177E+02   -0.11308892E-08    0.13013258E-04
+   15   -0.17312177E+02   -0.10999202E-10    0.96354052E-06
+>> Charges saved for restart in charges.bin
+ 
+ Total Energy:                     -17.0814786009 H
+ Total Mermin free energy:         -17.0814786009 H

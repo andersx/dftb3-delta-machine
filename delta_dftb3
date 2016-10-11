@@ -1,0 +1,68 @@
+#!/usr/bin/env python2
+
+import numpy as np
+
+from scipy.linalg import cho_solve, cho_factor
+from scipy.stats import pearsonr, linregress
+
+from matplotlib import pyplot
+
+import seaborn as sns
+import pandas as pd
+
+import ezpickle
+
+from kernels import klaplace_kernel as kernel
+
+
+
+if __name__ == "__main__":
+
+    n_test = 1000
+
+    print "Parsing dataset ..."
+    mols = ezpickle.load("mols.cpickle")
+
+    small_mols = [mol for mol in mols if len(mol.atomtypes) - mol.atomtypes.count('H') < 5] 
+    large_mols = [mol for mol in mols if not len(mol.atomtypes) - mol.atomtypes.count('H') < 5] 
+    np.random.shuffle(large_mols) 
+    
+    training = large_mols[:n_test - len(small_mols)] + small_mols
+    test = large_mols[n_test - len(small_mols):]
+   
+    print "training/test = ", len(training), len(test)
+
+    A = np.array([mol.coulomb_matrix for mol in training])
+    B = np.array([mol.coulomb_matrix for mol in test])
+    Y = np.array([-(mol.energy - mol.dftb3_hof) for mol in training])
+    Y_verify = np.array([-(mol.energy - mol.dftb3_hof) for mol in test])
+    I = np.identity(len(training))
+
+    # Set hyper-parameters
+    sigma = 10**(4.2)
+    llambda = 10**(-10.0)
+
+    print "Calculating K-matrix ..."
+    K = kernel(A, A, sigma)
+
+    print "Calculating alpha ..."
+    alpha = cho_solve(cho_factor(K + llambda * I), Y)
+
+    print "Calculating L-matrix ..."
+    L = kernel(A, B, sigma)
+
+    print "Calculating Y(tilde)-vector ..."
+    Y_tilde = np.dot(L.transpose(), alpha)
+
+
+    print "Plotting ..."
+    Y_pbe = np.array([mol.energy for mol in test])
+    Y_calc = np.array([mol.dftb3_hof for mol in test]) - Y_tilde
+
+    ydata = pd.DataFrame(dict({ "Calculated" : Y_pbe, 
+                                "Predicted" : Y_calc}))
+    sns.set(style="whitegrid")
+    ax = sns.lmplot(x="Calculated", y="Predicted", data=ydata)
+    ax.set(xlim=[-2500, -500], ylim=[-2500,-500])
+    ax.set(ylabel='PBE0/def2-TZVP HoF [kcal/mol]', xlabel='DFTB3 + ML-correction HoF [kcal/mol]')
+    pyplot.savefig("correlation.png")

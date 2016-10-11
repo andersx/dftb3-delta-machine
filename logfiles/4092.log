@@ -1,0 +1,87 @@
+================================================================================
+==
+==   Density Functional based Tight Binding with a lot of extensions (DFTB+)    
+==
+==                              Release: 1.2 (p2)
+==
+==                            (ParserVersion = 4)
+==
+================================================================================
+
+
+********************************************************************************
+** Parsing and initializing
+********************************************************************************
+
+Interpreting input file 'dftb_in.hsd'
+--------------------------------------------------------------------------------
+WARNING!
+-> WriteHSDInput and WriteXMLInput both turned off. You won't eventually be 
+ able to obtain the same results with a later version of the code!
+Path: dftb_in/ParserOptions
+Line: 76-79 (File: dftb_in.hsd)
+
+Reading SK-files:
+  /home/andersx/parameters/3ob-3-1/C-C.skf
+  /home/andersx/parameters/3ob-3-1/C-O.skf
+  /home/andersx/parameters/3ob-3-1/C-H.skf
+  /home/andersx/parameters/3ob-3-1/O-C.skf
+  /home/andersx/parameters/3ob-3-1/O-O.skf
+  /home/andersx/parameters/3ob-3-1/O-H.skf
+  /home/andersx/parameters/3ob-3-1/H-C.skf
+  /home/andersx/parameters/3ob-3-1/H-O.skf
+  /home/andersx/parameters/3ob-3-1/H-H.skf
+Done.
+
+Starting initialization...
+--------------------------------------------------------------------------------
+Mode:                        Static calculation
+Self consistent charges:     Yes
+SCC-tolerance:                 0.100000E-05
+Max. scc iterations:                    100
+Ewald alpha parameter:         0.000000E+00
+Spin polarisation:           No
+Nr. of up electrons:            21.000000
+Nr. of down electrons:          21.000000
+Periodic boundaries:         No
+Diagonalizer:                Divide and Conquer
+Mixer:                       Anderson mixer
+Mixing parameter:                  0.200000
+Maximal SCC-cycles:                     100
+Nr. of chrg. vectors to mix:              8
+Electronic temperature:        0.100000E-07
+Initial charges:             Set automatically (system chrg:   0.000E+00)
+Included shells:              C:  s, p
+                              O:  s, p
+                              H:  s
+Full 3rd order correction    Yes
+Damped SCC                   Yes
+Damped specie(s):            H                                                 
+Extra options:
+--------------------------------------------------------------------------------
+ 
+
+********************************************************************************
+** Geometry step: 0
+********************************************************************************
+
+  iSCC Total electronic   Diff electronic      SCC error    
+    1   -0.18888779E+02    0.00000000E+00    0.67191393E+00
+    2   -0.18889131E+02   -0.35204626E-03    0.66329398E+00
+    3   -0.18899372E+02   -0.10240462E-01    0.80063109E-01
+    4   -0.18899283E+02    0.88989960E-04    0.84389929E-01
+    5   -0.18899465E+02   -0.18158733E-03    0.66536972E-01
+    6   -0.18899575E+02   -0.11034855E-03    0.13056338E-01
+    7   -0.18899575E+02    0.10004687E-07    0.13787381E-01
+    8   -0.18899587E+02   -0.12607465E-04    0.27966894E-02
+    9   -0.18899587E+02    0.26374778E-07    0.18679001E-02
+   10   -0.18899587E+02   -0.46819949E-07    0.13086087E-02
+   11   -0.18899588E+02   -0.11286478E-07    0.39985662E-03
+   12   -0.18899588E+02   -0.38117811E-08    0.42366324E-04
+   13   -0.18899588E+02   -0.13636026E-09    0.12123849E-04
+   14   -0.18899588E+02   -0.81783469E-11    0.16691677E-05
+   15   -0.18899588E+02   -0.95923269E-13    0.15806982E-06
+>> Charges saved for restart in charges.bin
+ 
+ Total Energy:                     -18.8895074734 H
+ Total Mermin free energy:         -18.8895074734 H

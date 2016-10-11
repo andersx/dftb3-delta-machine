@@ -1,0 +1,77 @@
+================================================================================
+==
+==   Density Functional based Tight Binding with a lot of extensions (DFTB+)    
+==
+==                              Release: 1.2 (p2)
+==
+==                            (ParserVersion = 4)
+==
+================================================================================
+
+
+********************************************************************************
+** Parsing and initializing
+********************************************************************************
+
+Interpreting input file 'dftb_in.hsd'
+--------------------------------------------------------------------------------
+WARNING!
+-> WriteHSDInput and WriteXMLInput both turned off. You won't eventually be 
+ able to obtain the same results with a later version of the code!
+Path: dftb_in/ParserOptions
+Line: 62-65 (File: dftb_in.hsd)
+
+Reading SK-files:
+  /home/andersx/parameters/3ob-3-1/C-C.skf
+  /home/andersx/parameters/3ob-3-1/C-H.skf
+  /home/andersx/parameters/3ob-3-1/H-C.skf
+  /home/andersx/parameters/3ob-3-1/H-H.skf
+Done.
+
+Starting initialization...
+--------------------------------------------------------------------------------
+Mode:                        Static calculation
+Self consistent charges:     Yes
+SCC-tolerance:                 0.100000E-05
+Max. scc iterations:                    100
+Ewald alpha parameter:         0.000000E+00
+Spin polarisation:           No
+Nr. of up electrons:            11.000000
+Nr. of down electrons:          11.000000
+Periodic boundaries:         No
+Diagonalizer:                Divide and Conquer
+Mixer:                       Anderson mixer
+Mixing parameter:                  0.200000
+Maximal SCC-cycles:                     100
+Nr. of chrg. vectors to mix:              8
+Electronic temperature:        0.100000E-07
+Initial charges:             Set automatically (system chrg:   0.000E+00)
+Included shells:              C:  s, p
+                              H:  s
+Full 3rd order correction    Yes
+Damped SCC                   Yes
+Damped specie(s):            H                                                 
+Extra options:
+--------------------------------------------------------------------------------
+ 
+
+********************************************************************************
+** Geometry step: 0
+********************************************************************************
+
+  iSCC Total electronic   Diff electronic      SCC error    
+    1   -0.90937496E+01    0.00000000E+00    0.26171495E+00
+    2   -0.90937607E+01   -0.11099637E-04    0.25899541E+00
+    3   -0.90940528E+01   -0.29205484E-03    0.32841389E-01
+    4   -0.90940447E+01    0.81025820E-05    0.36070632E-01
+    5   -0.90940955E+01   -0.50864679E-04    0.28604796E-01
+    6   -0.90940964E+01   -0.92499038E-06    0.30809233E-02
+    7   -0.90940970E+01   -0.52341088E-06    0.22318309E-02
+    8   -0.90940976E+01   -0.64990461E-06    0.39008436E-03
+    9   -0.90940976E+01   -0.36731329E-09    0.45315858E-04
+   10   -0.90940976E+01   -0.97630348E-10    0.85449545E-05
+   11   -0.90940976E+01   -0.17763568E-12    0.27360922E-07
+>> Charges saved for restart in charges.bin
+ 
+ Total Energy:                      -9.0584696787 H
+ Total Mermin free energy:          -9.0584696787 H
